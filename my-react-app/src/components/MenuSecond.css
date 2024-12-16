@@ -1,0 +1,91 @@
+/* Second Menu Container */
+.second-menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.menu--container {
+  margin-top: 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Browse Categories and Hamburger Menu */
+.browse-categories-container {
+  background-color: #28a745;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.categories-dropdown {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+/* Dropdowns and Buy Button */
+.dropdowns-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dropdown {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.buy-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+}
+
+/* Special Offer and Purchase Theme Button */
+.offer-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.special-offer-text {
+  /* font-size: 18px; */
+  /* font-weight: bold; */
+  color: #333;
+}
+
+.purchase-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.purchase-btn:hover {
+  background-color: #218838;
+}
