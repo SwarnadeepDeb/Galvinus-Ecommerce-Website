@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./Menu.css";
 import { FaSearch, FaHeart, FaShoppingCart } from "react-icons/fa"; // Using react-icons for icons
+import {  FaCaretDown } from "react-icons/fa";
 
 const Menu = () => {
   const [searchText, setSearchText] = useState("");
-  const [category, setCategory] = useState("all");
+  const [category, setCategory] = useState("All Categories");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const handleSearch = () => {
     // Handle the search logic here
@@ -12,13 +14,20 @@ const Menu = () => {
     console.log("Selected Category: ", category);
   };
 
+  const handleCategorySelect = (selectedCategory) => {
+    setCategory(selectedCategory);
+    setDropdownOpen(false); // Close the dropdown after selection
+  };
+
   return (
     <div className="menu-container">
       <div className="menu-main-content">
         {/* Logo Section */}
         <div className="logo-container">
-          <i class="fa-solid fa-tree"></i>
-          <h1 className="logo">woodmart.</h1>
+          <img
+            src="https://woodmart.b-cdn.net/wp-content/themes/woodmart/images/wood-logo-dark.svg"
+            alt=""
+          />
         </div>
 
         {/* Search Bar Section */}
@@ -26,21 +35,28 @@ const Menu = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Search..."
+            placeholder="Search for products"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <select
-            className="category-dropdown"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
+
+          {/* Custom Styled Dropdown */}
+          <div
+            className="custom-dropdown"
+            onClick={() => setDropdownOpen(!dropdownOpen)}
           >
-            <option value="all">All Categories</option>
-            <option value="electronics">Electronics</option>
-            <option value="fashion">Fashion</option>
-            <option value="home">Home</option>
-            <option value="beauty">Beauty</option>
-          </select>
+            <div className="dropdown-selected">{category} </div><FaCaretDown/>
+            {dropdownOpen && (
+              <ul className="dropdown-options">
+                <li onClick={() => handleCategorySelect("All Categories")}>All Categories</li>
+                <li onClick={() => handleCategorySelect("Electronics")}>Electronics</li>
+                <li onClick={() => handleCategorySelect("Fashion")}>Fashion</li>
+                <li onClick={() => handleCategorySelect("Home")}>Home</li>
+                <li onClick={() => handleCategorySelect("Beauty")}>Beauty</li>
+              </ul>
+            )}
+          </div>
+
           <button className="search-btn" onClick={handleSearch}>
             <FaSearch />
           </button>
@@ -48,14 +64,22 @@ const Menu = () => {
 
         {/* Login/Register Section */}
         <div className="auth-container">
-          <a className="auth-btn">Login</a> /
-          <a className="auth-btn">Register</a>
+          <a className="auth-btn">LOGIN / REGISTER</a>
         </div>
 
         {/* Icons Section */}
         <div className="icons-container">
-          <FaHeart className="icon heart-icon" />
-          <FaShoppingCart className="icon cart-icon" />
+          <div className="icon-wrapper">
+            <i className="fa-solid fa-shuffle"></i>
+            <span className="badge">0</span>
+          </div>
+        </div>
+        <div className="cart">
+          <div className="icon-wrapper">
+            <i className="fa-solid fa-bag-shopping"></i>
+            <span className="badge">0</span>
+          </div>
+          <p className="cart-price">$0.00</p>
         </div>
       </div>
     </div>

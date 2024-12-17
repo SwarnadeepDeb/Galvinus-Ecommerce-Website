@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fontsource/lato";
 
 const Navbar = () => {
   return (
@@ -34,29 +34,29 @@ const Navbar = () => {
               <i className="fab fa-facebook-f icon"></i>
               <i className="fab fa-instagram icon"></i>
               <i className="fab fa-youtube icon"></i>
-              {/* <i class="fa-brands fa-x-twitter"></i> */}
               <i className="fab fa-skype icon"></i>
             </div>
           </div>
         </div>
 
         {/* Additional Links */}
-        <div className="link-container">
-          <div className="newsletter">
-            <a href="/newsletter" className="link">
-              NEWSLETTER
-            </a>
+        <div className="newsletter">
+          <div className="envelope">
+            <i class="fa-regular fa-envelope"></i>
           </div>
-          <div className="contact-us">
-            <a href="/contact-us" className="link">
-              CONTACT US
-            </a>
-          </div>
-          <div className="FAQ">
-            <a href="/faqs" className="link">
-              FAQS
-            </a>
-          </div>
+          <a href="/newsletter" className="link">
+            NEWSLETTER
+          </a>
+        </div>
+        <div className="contact-us">
+          <a href="/contact-us" className="link">
+            CONTACT US
+          </a>
+        </div>
+        <div className="FAQ">
+          <a href="/faqs" className="link">
+            FAQS
+          </a>
         </div>
       </div>
     </nav>

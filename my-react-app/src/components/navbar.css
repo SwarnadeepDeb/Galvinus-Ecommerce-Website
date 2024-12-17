@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .nav-container {
-  background-color: #28a745; /* Green background */
+  background-color: rgba(131, 183, 53, 1); /* Green background */
   width: 100%;
 }
 
@@ -16,6 +16,8 @@
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
+  font-size: 12px;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
 }
 
 
@@ -25,11 +27,13 @@
 .contact-us,
 .social-container,
 .FAQ {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.25);
   padding: 5px;
 }
-
+.FAQ {
+  border-right: 0.5px solid rgba(255, 255, 255, 0.25);
+  padding: 5px;
+}
 .newsletter,
 .contact-us,
 .FAQ{
@@ -41,39 +45,37 @@
 /* Dropdown */
 .language .dropdown {
   padding: 5px 10px;
-  font-size: 16px;
   border-radius: 4px;
   border: none;
   outline: none;
-  margin: 7px 0;
-  background-color: #28a745;
+  background-color: rgba(131, 183, 53, 1);;
   color: white;
+  font-size: 12px;
 }
 
 .country .dropdown {
     padding: 5px 10px;
-    font-size: 16px;
     border-radius: 4px;
     border: none;
     outline: none;
-    margin: 7px 0;
-    background-color: #28a745;
+    background-color: rgba(131, 183, 53, 1);;
     color: white;
+    font-size: 12px;
   }
 
 /* Social Media Container */
 .social-container{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-grow: 1;
 }
 
 
 .title {
-  font-size: 18px;
   color: white;
+  font-size: 12px;
 }
 
 .social-container .social-icons {
@@ -81,10 +83,15 @@
   justify-content: center;
   gap: 10px;
   color: white;
+  font-size: 14px;
 }
-
+.envelope{
+  color: white;
+  margin-right: 4px;
+  
+  font-size: 12px;
+}
 .icon {
-  font-size: 20px;
   color: white;
   cursor: pointer;
   transition: color 0.3s;
@@ -104,7 +111,6 @@
 .link {
   color: white;
   text-decoration: none;
-  font-size: 16px;
   transition: color 0.3s;
 }
 
@@ -118,5 +124,4 @@
 }
 .title-container div{
     padding: 5px;
-
 }

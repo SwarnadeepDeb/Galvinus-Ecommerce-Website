@@ -4,14 +4,31 @@ import { FaBars, FaCaretDown } from "react-icons/fa";
 
 const NewMenu = () => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("Browse Categories");
+  const [selectedCategory, setSelectedCategory] = useState("BROWSE CATEGORIES");
+  const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
 
   const handleHamburgerClick = () => {
     setHamburgerOpen(!isHamburgerOpen);
   };
 
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+    setOpenDropdown(null);
+  };
+
+  const toggleDropdown = (dropdown) => {
+    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
+  };
+
+  // Hover event handlers
+  const handleMouseEnter = (dropdown) => {
+    setOpenDropdown(dropdown); // Open the dropdown when hovering over
+  };
+
+  const handleMouseLeave = () => {
+    if (openDropdown !== "categories") {
+      setOpenDropdown(null); // Close dropdown when mouse leaves
+    }
   };
 
   return (
@@ -22,64 +39,92 @@ const NewMenu = () => {
           <button className="hamburger-menu" onClick={handleHamburgerClick}>
             <FaBars />
           </button>
-          <select
-            className="categories-dropdown"
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-          >
-            <option value="Browse Categories">Browse Categories</option>
-            <option value="Furniture">Furniture</option>
-            <option value="Cooking">Cooking</option>
-            <option value="Accessories">Accessories</option>
-            <option value="Fashion">Fashion</option>
-
-            <option value="Clocks">Clocks</option>
-            <option value="Lighting">Lighting</option>
-            <option value="Toys">Toys</option>
-
-            <option value="Hand Made">Hand Made</option>
-            <option value="Minimalism">Minimalism</option>
-            <option value="Electronics">Electronics</option>
-
-            <option value="Car">Car</option>
-          </select>
+          <div className="custom-dropdown">
+            <button
+              onClick={() => toggleDropdown("categories")}
+              onMouseEnter={() => handleMouseEnter("categories")} // Open on hover
+              onMouseLeave={handleMouseLeave} // Close when mouse leaves
+            >
+              {selectedCategory} <FaCaretDown />
+            </button>
+            {openDropdown === "categories" && (
+              <ul className="dropdown-options">
+                <li onClick={() => handleCategoryChange("Furniture")}>
+                  <i className="fa-solid fa-chair"></i>
+                  <span>Furniture</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Cooking")}>
+                  <i className="fa-solid fa-utensils"></i>
+                  <span>Cooking</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Accessories")}>
+                  <i className="fa-regular fa-keyboard"></i>
+                  <span>Accessories</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Fashion")}>
+                  <i className="fa-solid fa-shirt"></i>
+                  <span>Fashion</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Clocks")}>
+                  <i className="fa-regular fa-clock"></i>
+                  <span>Clocks</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Lighting")}>
+                  <i className="fa-solid fa-bolt"></i>
+                  <span>Lighting</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Toys")}>
+                  <i className="fa-solid fa-gamepad"></i>
+                  <span>Toys</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Hand Made")}>
+                  <i className="fa-solid fa-wand-magic"></i>
+                  <span>Hand Made</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Electronics")}>
+                  <i className="fa-solid fa-laptop-medical"></i>
+                  <span>Electronics</span>
+                </li>
+                <li onClick={() => handleCategoryChange("Car")}>
+                  <i className="fa-solid fa-car"></i>
+                  <span>Car</span>
+                </li>
+              </ul>
+            )}
+          </div>
         </div>
 
-        {/* Separate Dropdowns for Home, Shops, Blog, Pages, Elements */}
+        {/* Separate Custom Dropdowns for Home, Shops, Blog, Pages, Elements */}
         <div className="dropdowns-container">
-          <div className="dropdown-item">
-            <select className="dropdown">
-              <option>Home</option>
-            </select>
-          </div>
-          <div className="dropdown-item">
-            <select className="dropdown">
-              <option>Shops</option>
-            </select>
-          </div>
-          <div className="dropdown-item">
-            <select className="dropdown">
-              <option>Blog</option>
-            </select>
-          </div>
-          <div className="dropdown-item">
-            <select className="dropdown">
-              <option>Pages</option>
-            </select>
-          </div>
-          <div className="dropdown-item">
-            <select className="dropdown">
-              <option>Elements</option>
-            </select>
-          </div>
-          <a className="buy-btn">Buy</a>
+          {["HOME", "SHOPS", "BLOG", "PAGES", "ELEMENTS"].map((item) => (
+            <div
+              className="dropdown-item"
+              key={item}
+              onMouseEnter={() => handleMouseEnter(item)} // Open on hover
+              onMouseLeave={handleMouseLeave} // Close when mouse leaves
+            >
+              <div className="custom-dropdown">
+                <button onClick={() => toggleDropdown(item)}>
+                  {item} <FaCaretDown />
+                </button>
+                {openDropdown === item && (
+                  <ul className="dropdown-options">
+                    <li>{item} Option 1</li>
+                    <li>{item} Option 2</li>
+                    <li>{item} Option 3</li>
+                  </ul>
+                )}
+              </div>
+            </div>
+          ))}
+          <a className="buy-btn">BUY</a>
         </div>
 
         {/* Special Offer and Purchase Theme Button */}
         <div className="offer-container">
-          <span className="special-offer-text">Special Offer</span>
-          <span>|</span>
-          <button className="purchase-btn">Purchase Theme</button>
+          <span className="special-offer-text">SPECIAL OFFER</span>
+          <span> | </span>
+          <button className="purchase-btn">PURCHASE THEME</button>
         </div>
       </div>
     </div>
