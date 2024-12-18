@@ -26,7 +26,7 @@ const Menu = () => {
         <div className="logo-container">
           <img
             src="https://woodmart.b-cdn.net/wp-content/themes/woodmart/images/wood-logo-dark.svg"
-            alt=""
+            alt="logo"
           />
         </div>
 

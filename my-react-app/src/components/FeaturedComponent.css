@@ -1,0 +1,71 @@
+.featured-container{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+.main-featured-container {
+    text-align: center;
+    padding: 20px;
+    
+    max-width: 1200px;
+  }
+  
+  .woodmart-collections {
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .featured-categories {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .woodmart-description {
+    font-size: 16px;
+    color: #777;
+    margin-top: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .images-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns for the images */
+    grid-template-rows: auto auto; /* Two rows for the layout */
+    grid-gap: 10px;
+    margin-top: 30px;
+    justify-items: center; /* Centers images horizontally */
+  }
+  
+  .image-item {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .large-image {
+    grid-column: span 1; /* Takes one column */
+    grid-row: span 2; /* Spans across two rows */
+    height: 100%; /* Make sure the large image spans both rows with equal height */
+  }
+  
+  .small-image {
+    height: 300px; /* Ensure all small images have the same height */
+  }
+  
+  /* Optional: Add responsiveness */
+  @media (max-width: 768px) {
+    .images-container {
+      grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    }
+  
+    .large-image {
+      grid-row: span 1; /* Large image takes one row on small screens */
+    }
+  }
+  

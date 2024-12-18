@@ -1,0 +1,105 @@
+.featured-categories-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.main-featured-categories-container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .wooden-accessories {
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+  }
+  
+  .featured-products {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .shop-description {
+    font-size: 16px;
+    color: #777;
+    margin-top: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .buttons-container {
+    margin-top: 30px;
+  }
+  
+  .category-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .category-button:hover {
+    background-color: #555;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid */
+    grid-gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px); /* Hover effect */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .product-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .product-price {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+  }
+  
+  .view-details-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #555;
+  }
+  
