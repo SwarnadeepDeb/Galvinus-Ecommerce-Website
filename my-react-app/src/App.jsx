@@ -10,6 +10,8 @@ import FeaturedComponent from "./components/FeaturedComponent";
 import FeaturedCategories from "./components/FeaturedCategories";
 import ProductLandingPage from "./components/ProductLandingPage";
 import Footer from "./components/footer";
+import EcommerceSolution from "./components/EcommerceSolution";
+import Newsletter from "./components/Newsletter";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <FeaturedComponent/>
       <FeaturedCategories/>
       <ProductLandingPage/>
+      <EcommerceSolution/>
+      <Newsletter/>
       <Footer/>
     </>
   );

@@ -15,7 +15,7 @@ To set up and run the application using Docker and Docker Compose:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/my-react-app.git
+   git clone https://github.com/SwarnadeepDeb/Galvinus-Ecommerce-Website.git
    cd my-react-app
    ```
 
